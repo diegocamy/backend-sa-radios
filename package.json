@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "build": "tsc",
-    "start": "tsc & node .",
+    "start": "node api/server.js",
     "dev": "tsc -w & nodemon server.ts"
   },
   "author": "",
@@ -18,7 +18,8 @@
     "form-data": "^2.3.3",
     "helmet": "^4.6.0",
     "multer": "^1.4.2",
-    "soundcloud-scraper": "^4.0.3"
+    "soundcloud-scraper": "^4.0.3",
+    "typescript": "^4.2.4"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
