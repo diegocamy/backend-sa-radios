@@ -26,9 +26,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 //MIDDLEWARES
-app.use(express.json());
-app.use(cors({ origin: process.env.ORIGIN || "http://localhost:3001" }));
+app.use(cors({ origin: process.env.ORIGIN || "*" }));
 app.use(helmet());
+app.use(express.json());
 
 //ROUTES
 app.post("/soundcloud", async (req, res, next) => {
