@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node api/server.js",
+    "start": "node dist/server.js",
     "dev": "tsc -w & nodemon server.ts"
   },
   "author": "",

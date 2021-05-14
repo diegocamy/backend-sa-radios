@@ -4,7 +4,7 @@ import helmet from "helmet";
 import multer from "multer";
 import fs from "fs";
 import dotenv from "dotenv";
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
 const FormData = require("form-data");
 const SoundCloud = require("soundcloud-scraper");
 dotenv.config();
@@ -26,7 +26,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 //MIDDLEWARES
-app.use(cors({ origin: process.env.ORIGIN || "*" }));
+app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
@@ -92,9 +92,7 @@ app.post("/shazam", upload.single("file"), async (req, res, next) => {
 
     try {
       //send the post request
-      let {
-        data,
-      } = await axios.post(
+      let { data } = await axios.post(
         "https://shazam-core.p.rapidapi.com/v1/tracks/recognize",
         form,
         { headers }
@@ -166,4 +164,6 @@ app.use(((
   });
 }) as express.ErrorRequestHandler);
 
-app.listen(process.env.PORT || 3000, () => console.log("LISTENING ON 3000"));
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
