@@ -1,12 +1,12 @@
-import express from "express";
-import cors from "cors";
-import helmet from "helmet";
-import multer from "multer";
-import fs from "fs";
-import dotenv from "dotenv";
-import axios from "axios";
-const FormData = require("form-data");
-const SoundCloud = require("soundcloud-scraper");
+import express = require("express");
+import cors = require("cors");
+import helmet = require("helmet");
+import multer = require("multer");
+import fs = require("fs");
+import dotenv = require("dotenv");
+import axios = require("axios");
+import FormData = require("form-data");
+import SoundCloud = require("soundcloud-scraper");
 dotenv.config();
 
 //INTERFACES
