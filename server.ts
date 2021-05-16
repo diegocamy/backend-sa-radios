@@ -92,7 +92,7 @@ app.post("/shazam", upload.single("file"), async (req, res, next) => {
 
     try {
       //send the post request
-      let { data } = await axios.post(
+      let { data } = await axios.default.post(
         "https://shazam-core.p.rapidapi.com/v1/tracks/recognize",
         form,
         { headers }
